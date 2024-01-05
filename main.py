@@ -45,8 +45,7 @@ def insert():
 @app.route("/update/<id>")
 def update(id):
     obj=Todo.query.filter_by(id=id).first()
-    obj.state = True
-    db.session.update(obj)
+    obj.state = "Completo"
     db.session.commit()
     return redirect(url_for('home'))
 
